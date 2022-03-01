@@ -44,7 +44,7 @@ it('nrm ls', async () => {
     .end();
 
   const { stdout, code } = await coffee.spawn('nrm', ['ls'], { shell: isWin }).end();
-  const match = '* cnpm';
+  const match = chalk.green.bold('* ') + 'cnpm';
   expect(stdout.includes(match)).toBe(true);
   expect(code).toBe(0);
 });
