@@ -6,8 +6,8 @@ orbs:
 jobs:
   test:
     executor:
-      name: node/default
-      tag: "lts"
+      name: node-docker
+      tag: <<parameters.version>>
     steps:
       - checkout
       - run: node --version
@@ -26,4 +26,3 @@ workflows:
                 - 13.11.0
                 - 12.16.0
                 - 10.19.0
-      - test
