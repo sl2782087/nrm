@@ -16,8 +16,8 @@ jobs:
       - run:
           name: Run YARN tests
           command: sudo yarn test
-workflows:
-  matrix-tests:
+workflows:     
+  test_my_app:
     jobs:
       - node/test:
           matrix:
@@ -26,6 +26,4 @@ workflows:
                 - 13.11.0
                 - 12.16.0
                 - 10.19.0
-  test_my_app:
-    jobs:
       - test
